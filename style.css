@@ -1,0 +1,109 @@
+body { 
+    font-family: sans-serif; 
+}
+
+h1 { 
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+      
+ul { 
+    width: 25rem; 
+    margin: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline-start: 0;
+}
+
+li {
+    display: block;
+    position: relative;
+    margin:auto;
+}
+
+label {
+    cursor: pointer;
+    display: block;
+    height: 2.5rem;
+    padding-left: 3rem;
+}
+
+input[type=text], input[type=password] {
+    border: 2px solid teal; 
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    width: 15rem; 
+    margin-bottom: 0.25rem;
+    border-radius: 1rem;
+}
+
+input[type=checkbox] {
+    display:none;
+}
+
+input[type=checkbox]:checked ~ .checkmark {
+    background-color: red;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: gray;
+}
+
+.checkmark:hover {
+    background-color: yellow;
+}
+
+
+#progress_box {
+    width: 15rem;
+    background-color: lightblue;
+    border: 2px solid black;
+}
+
+#progress_box, #progress_bar {
+    height: 0.75rem;
+    border-radius: 1rem;
+}
+
+#progress_bar {
+    display: block;
+    float: left;
+}
+
+.score25 {
+    background-color:red;
+    width:25%;
+}
+
+.score50 {
+    background-color:orange;
+    width:50%;
+}
+      
+.score75 {
+    background-color:yellow;
+    width:75%;
+}
+
+.score100 {
+    background-color:green;
+    width:100%;
+}
+
+#feedback {
+    width: 15rem;
+    min-height: 3rem;
+    padding: 1rem;
+    background-color: lightgray;
+    border: 2px solid gray;
+    border-radius: 1rem;
+}
