@@ -28,8 +28,9 @@ li {
 label {
     cursor: pointer;
     display: block;
-    height: 2.5rem;
-    padding-left: 3rem;
+    height: 1.25rem;
+    padding-left: 1.5rem;
+    margin-bottom: 0.25rem;
 }
 
 input[type=text], input[type=password] {
@@ -53,9 +54,10 @@ input[type=checkbox]:checked ~ .checkmark {
     position: absolute;
     top: 0;
     left: 0;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1rem;
+    width: 1rem;
     background-color: gray;
+    border: 2px solid black;
 }
 
 .checkmark:hover {
@@ -72,6 +74,7 @@ input[type=checkbox]:checked ~ .checkmark {
 #progress_box, #progress_bar {
     height: 0.75rem;
     border-radius: 1rem;
+    margin-bottom: 0.25rem;
 }
 
 #progress_bar {
@@ -105,5 +108,13 @@ input[type=checkbox]:checked ~ .checkmark {
     padding: 1rem;
     background-color: lightgray;
     border: 2px solid gray;
+    border-radius: 1rem;
+}
+
+#warning {
+    display: block;
+    font-size: 0.9rem;
+    background-color: whitesmoke;
+    padding: 0.5rem;
     border-radius: 1rem;
 }
