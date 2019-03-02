@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <script type="text/javascript" src="zxcvbn.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li>
+	<label for="pwshow">
+	<input type="checkbox" id="pwshow" />
+	<span class="checkmark"></span>
+	show password</label>
+      </li>
+      <li>
+	<input type="password" id="pword" />
+      </li>
+      <li id="progress">
+	<div id="progress_box">
+	  <div id="progress_bar">&nbsp;</div>
+	</div>
+      </li>
+      <li id="pwscore"></li>
+      <li id="pwwarn"></li>
+      <li id="pwsugg"></li>
+    </ul>
+    <style type="text/css">
+      body { font-family: sans-serif; }
+      ul { width: 25rem; margin: auto; }
+      input[type=text], input[type=password] { 
+      border: 1px solid teal; 
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      width: 15rem; 
+      margin-bottom: 0.25rem;
+      border-radius:1rem;
+      }
+      li {
+      display:block;
+      position:relative;
+      }
+      label {
+      display: block;
+      height: 2.5rem;
+      padding-left: 3rem;
+      }
+      .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1.5rem;
+      width: 1.5rem;
+      background-color: gray;
+      }
+      .checkmark:hover {
+      background-color: yellow;
+      }
+
+      input[type=checkbox]:checked ~ .checkmark {
+      background-color: red;
+      }
+
+      input[type=checkbox] {
+      display:none;
+      }
+
+      #progress_box {
+      width:15rem;
+      height:0.75rem;
+      background-color: lightblue;
+      border: 2px solid black;
+      border-radius:1rem;
+      }
+      #progress_bar {
+      display:block;
+      float:left;
+      height:0.75rem;
+      border-radius:1rem;
+      }
+      .score25 {
+      background-color:red;
+      width:25%;
+      }
+      .score50 {
+      background-color:orange;
+      width:50%;
+      }
+      .score75 {
+      background-color:yellow;
+      width:75%;
+      }
+      .score100 {
+      background-color:green;
+      width:100%;
+      }
+    </style>
+    <script type="text/javascript">
+      var pwshow  = document.getElementById("pwshow")  
+      var pwfield = document.getElementById("pword")
+      var pwscore = document.getElementById("pwscore")
+      var pwwarn  = document.getElementById("pwwarn")
+      var pwsugg  = document.getElementById("pwsugg")
+      var pwbar   = document.getElementById("progress_bar")
+      
+      pwshow.onclick = function(){
+      if (pwshow.checked == true) {
+      pwfield.type = 'text'
+      }
+      else {
+      pwfield.type = 'password'
+      }
+      }
+
+      pwfield.onkeyup = function(){
+      result = zxcvbn(pwfield.value)
+      barsize = result.score * 25;
+      pwbar.className = '';
+      pwbar.classList.add("score"+barsize)
+      pwscore.innerHTML = result.score
+      pwwarn.innerHTML = result.feedback.warning
+      pwsugg.innerHTML = result.feedback.suggestions
+      }
+    </script>
+  </body>
+</html>
