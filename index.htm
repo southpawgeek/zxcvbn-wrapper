@@ -3,47 +3,42 @@
 <head>
   <link rel="stylesheet" href="style.css" />
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  <script type="text/javascript" src="wrapper.js"></script>
 </head>
 
 <body>
   <h1>zxcvbn wrapper</h1>
-  <ul>
-    <li>
-      <div id="pw_box">
-        <label for="pwshow">
-          <input type="checkbox" id="pwshow" />
-          <span class="pwshow_text">show password</span></label>
-        <hr />
-        <input type="password" id="pword" />
-      </div>
-    </li>
-    <li>
-      <div class="progress_box">
-        <h2>CSS progress bar</h2>
-        <div id="progress_outline">
-          <div id="progress_bar">&nbsp;</div>
-        </div>
-      </div>
 
-      <div class="progress_box">
-        <h2>Star progress bar</h2>
-        <div id="pwstar">
-          <i class="material-icons">star_outline</i><i class="material-icons">star_outline</i><i
-            class="material-icons">star_outline</i><i class="material-icons">star_outline</i>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div id="feedback">
-        <h3>Feedback and warnings</h3>
-        <p id="warning">Just start typing - we'll help you create a strong password.</p>
-        <p id="suggestions"></p>
-      </div>
-    </li>
-  </ul>
-  <script type="text/javascript" src="wrapper.js"></script>
+  <!-- password field -->
+  <div class="zw-box" id="zw-password">
+    <!-- show password checkbox with label -->
+    <label for="zw-password__show--check">
+      <input type="checkbox" id="zw-password__show--check" name='zw-password__show' />
+      <span id="zw-password__show--text">show password</span></label>
+    <hr />
+    <!-- password input -->
+    <input type="password" id="zw-password__input" name='password' />
+  </div>
+
+  <!-- progress bar -->
+  <div class="zw-box" id="zw-progress__bar">
+    <div id="zw-progress__bar--outline">
+      <div id="zw-progress__bar--fill"></div>
+    </div>
+  </div>
+
+  <!-- progress stars -->
+  <div class="zw-box" id="zw-progress__star">
+    <span class="zw-progress__star--empty">&star;&star;&star;&star;</span>
+  </div>
+
+  <!-- feedback box -->
+  <div class="zw-box" id="zw-feedback">
+    <!-- feedback warnings -->
+    <p id="zw-feedback__warning">Just start typing - we'll help you create a strong password.</p>
+    <!-- feedback suggestions -->
+    <p id="zw-feedback__suggestion"></p>
+  </div>
 </body>
 
 </html>

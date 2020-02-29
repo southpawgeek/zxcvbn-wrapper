@@ -2,129 +2,106 @@ body {
     font-family: sans-serif;
 }
 
-h1,
-h2,
-h3 {
-    text-align: center;
-}
-
 h1 {
-    font-size: 1.3rem;
-}
-
-h2 {
-    font-size: 1.2rem;
-}
-
-h3 {
-    font-size: 1.1rem;
+    text-align: center;
 }
 
 hr {
     display: none;
 }
 
-input:focus {
-    outline: none;
-}
-
-ul {
-    width: 25rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-inline-start: 0;
-}
-
-li {
-    display: block;
-    position: relative;
-    margin: auto;
-}
-
-label {
+label[for=zw-password__show--check] {
     cursor: pointer;
     display: block;
     width: 100%;
     text-align: center;
     margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
-input[type=text],
-input[type=password] {
+input[type=text]#zw-password__input:focus,
+input[type=password]#zw-password__input:focus {
+    outline: none;
+}
+
+input[type=text]#zw-password__input,
+input[type=password]#zw-password__input {
     border: 1px solid rgb(175, 175, 175);
     padding: 0.5rem;
     font-size: 1.5rem;
-    width: 15rem;
-    margin-bottom: 0.25rem;
-    border-radius: 0.5rem;
+    width: 100%;
+    border-radius: 0.25rem;
 }
 
-.progress_box,
-#feedback,
-#pw_box {
-    padding: 1rem;
-    border-radius: 0.5rem;
+.zw-box {
+    width: 20rem;
+    margin: auto;
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
     border: 1px solid rgb(200, 200, 200);
-    background-color: rgb(225, 225, 225);
+    background-color: rgb(240, 240, 240);
     margin-bottom: 1rem;
 }
 
-#progress_outline {
-    width: 15rem;
+#zw-progress__bar--outline {
+    width: 100%;
     background-color: lightblue;
     border: 2px solid black;
 }
 
-#progress_outline,
-#progress_bar {
-    height: 0.75rem;
-    border-radius: 1rem;
-    margin-bottom: 0.25rem;
-}
-
-#progress_bar {
+#zw-progress__bar--fill {
     display: block;
     float: left;
 }
 
-#pwstar {
-    text-align: center;
+#zw-progress__bar--outline,
+#zw-progress__bar--fill {
+    height: 1rem;
+    border-radius: 1rem;
 }
 
-.score25 {
+.zw-progress__bar--score25 {
     background-color: red;
     width: 25%;
 }
 
-.score50 {
+.zw-progress__bar--score50 {
     background-color: orange;
     width: 50%;
 }
 
-.score75 {
+.zw-progress__bar--score75 {
     background-color: yellow;
     width: 75%;
 }
 
-.score100 {
+.zw-progress__bar--score100 {
     background-color: green;
     width: 100%;
 }
 
-#feedback {
-    width: 15rem;
+#zw-progress__star {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.zw-progress__star--fill {
+    color: rgb(150, 0, 0);
+}
+
+.zw-progress__star--empty {
+    color: rgb(35, 35, 35);
+}
+
+#zw-feedback {
     min-height: 3rem;
 }
 
-#warning {
+#zw-feedback_warning {
     font-weight: bold;
 }
 
-#suggestions,
-#warning {
-    text-align: justify;
-    text-align-last: left;
+#zw-feedback__suggestion,
+#zw-feedback__warning {
     font-size: 0.9rem;
 }
