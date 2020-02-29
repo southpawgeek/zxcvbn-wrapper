@@ -1,18 +1,36 @@
-body { 
-    font-family: sans-serif; 
+body {
+    font-family: sans-serif;
 }
 
-h1 { 
+h1,
+h2,
+h3 {
     text-align: center;
+}
+
+h1 {
+    font-size: 1.3rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+hr {
+    display: none;
 }
 
 input:focus {
     outline: none;
 }
-      
-ul { 
-    width: 25rem; 
-    margin: auto; 
+
+ul {
+    width: 25rem;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,56 +40,45 @@ ul {
 li {
     display: block;
     position: relative;
-    margin:auto;
+    margin: auto;
 }
 
 label {
     cursor: pointer;
     display: block;
-    height: 1.25rem;
-    padding-left: 1.5rem;
-    margin-bottom: 0.25rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
-input[type=text], input[type=password] {
-    border: 2px solid teal; 
+input[type=text],
+input[type=password] {
+    border: 1px solid rgb(175, 175, 175);
     padding: 0.5rem;
     font-size: 1.5rem;
-    width: 15rem; 
+    width: 15rem;
     margin-bottom: 0.25rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
-input[type=checkbox] {
-    display:none;
+.progress_box,
+#feedback,
+#pw_box {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(200, 200, 200);
+    background-color: rgb(225, 225, 225);
+    margin-bottom: 1rem;
 }
 
-input[type=checkbox]:checked ~ .checkmark {
-    background-color: red;
-}
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 1rem;
-    width: 1rem;
-    background-color: gray;
-    border: 2px solid black;
-}
-
-.checkmark:hover {
-    background-color: yellow;
-}
-
-
-#progress_box {
+#progress_outline {
     width: 15rem;
     background-color: lightblue;
     border: 2px solid black;
 }
 
-#progress_box, #progress_bar {
+#progress_outline,
+#progress_bar {
     height: 0.75rem;
     border-radius: 1rem;
     margin-bottom: 0.25rem;
@@ -82,39 +89,42 @@ input[type=checkbox]:checked ~ .checkmark {
     float: left;
 }
 
+#pwstar {
+    text-align: center;
+}
+
 .score25 {
-    background-color:red;
-    width:25%;
+    background-color: red;
+    width: 25%;
 }
 
 .score50 {
-    background-color:orange;
-    width:50%;
+    background-color: orange;
+    width: 50%;
 }
-      
+
 .score75 {
-    background-color:yellow;
-    width:75%;
+    background-color: yellow;
+    width: 75%;
 }
 
 .score100 {
-    background-color:green;
-    width:100%;
+    background-color: green;
+    width: 100%;
 }
 
 #feedback {
     width: 15rem;
     min-height: 3rem;
-    padding: 1rem;
-    background-color: lightgray;
-    border: 2px solid gray;
-    border-radius: 1rem;
 }
 
 #warning {
-    display: block;
+    font-weight: bold;
+}
+
+#suggestions,
+#warning {
+    text-align: justify;
+    text-align-last: left;
     font-size: 0.9rem;
-    background-color: whitesmoke;
-    padding: 0.5rem;
-    border-radius: 1rem;
 }

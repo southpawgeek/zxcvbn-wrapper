@@ -1,33 +1,49 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="style.css"/>
-    <script type="text/javascript" src="zxcvbn.js"></script>
-  </head>
-  <body>
-    <h1>zxcvbn wrapper</h1>
-    <ul>
-      <li>
-	<label for="pwshow">
-	<input type="checkbox" id="pwshow" />
-	<span class="checkmark"></span>
-	show password</label>
-      </li>
-      <li>
-	<input type="password" id="pword" />
-      </li>
-      <li id="progress">
-	<div id="progress_box">
-	  <div id="progress_bar">&nbsp;</div>
-	</div>
-      </li>
-      <li>
-        <div id="feedback">
-          <p id="suggestions">Just start typing - we'll help you create a strong password. </p>
-          <p id="warning"></p>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+  <h1>zxcvbn wrapper</h1>
+  <ul>
+    <li>
+      <div id="pw_box">
+        <label for="pwshow">
+          <input type="checkbox" id="pwshow" />
+          <span class="pwshow_text">show password</span></label>
+        <hr />
+        <input type="password" id="pword" />
+      </div>
+    </li>
+    <li>
+      <div class="progress_box">
+        <h2>CSS progress bar</h2>
+        <div id="progress_outline">
+          <div id="progress_bar">&nbsp;</div>
         </div>
-      </li>
-      <li id="pwscore"></li>
-    </ul>
-    <script type="text/javascript" src="wrapper.js"></script>
-  </body>
+      </div>
+
+      <div class="progress_box">
+        <h2>Star progress bar</h2>
+        <div id="pwstar">
+          <i class="material-icons">star_outline</i><i class="material-icons">star_outline</i><i
+            class="material-icons">star_outline</i><i class="material-icons">star_outline</i>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div id="feedback">
+        <h3>Feedback and warnings</h3>
+        <p id="warning">Just start typing - we'll help you create a strong password.</p>
+        <p id="suggestions"></p>
+      </div>
+    </li>
+  </ul>
+  <script type="text/javascript" src="wrapper.js"></script>
+</body>
+
 </html>
