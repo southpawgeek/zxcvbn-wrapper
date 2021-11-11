@@ -1,16 +1,9 @@
+/*jshint esversion: 6 */
 document.addEventListener("DOMContentLoaded", function () {
     'use strict';
 
-    // these are your filled/unfilled stars
-    var star_filled = '<span class="zw-progress__star--fill">&starf;</span>';
-    var star_empty = '<span class="zw-progress__star--empty">&star;</span>';
-
-    var pwshow = document.getElementById("zw-password__show--check");
-    var pwfield = document.getElementById("zw-password__input");
-    var pwwarn = document.getElementById("zw-feedback__warning");
-    var pwsugg = document.getElementById("zw-feedback__suggestion");
-    var pwbar = document.getElementById("zw-progress__bar--fill");
-    var pwstar = document.getElementById("zw-progress__star");
+    let pwfield = document.getElementById("zw-password__input");
+    let pwshow = document.getElementById("zw-password__show--check");
 
     pwshow.onclick = function () {
         if (pwshow.checked === true) {
@@ -21,11 +14,20 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     pwfield.onkeyup = function () {
-        var result = zxcvbn(pwfield.value);
-        var pwlength = pwfield.value.length;
-        var barsize = result.score * 25;
-        var star_pos = star_filled.repeat(result.score);
-        var star_neg = star_empty.repeat(4 - result.score);
+        // these are your filled/unfilled stars
+        const star_filled = '<span class="zw-progress__star--fill">&starf;</span>';
+        const star_empty = '<span class="zw-progress__star--empty">&star;</span>';
+
+        let pwwarn = document.getElementById("zw-feedback__warning");
+        let pwsugg = document.getElementById("zw-feedback__suggestion");
+        let pwbar = document.getElementById("zw-progress__bar--fill");
+        let pwstar = document.getElementById("zw-progress__star");
+
+        let result = zxcvbn(pwfield.value);
+        let pwlength = pwfield.value.length;
+        let barsize = result.score * 25;
+        let star_pos = star_filled.repeat(result.score);
+        let star_neg = star_empty.repeat(4 - result.score);
 
         pwstar.innerHTML = star_pos + star_neg;
 
